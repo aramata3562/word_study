@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './wordCard.module.css';
 type WordCardProps = {
   word: string;
   meaning: string;
@@ -8,8 +8,8 @@ type WordCardProps = {
 const WordCard: React.FC<WordCardProps> = ({ word, meaning }) => {
   return (
     <div>
-      <h2>{word}</h2>
-      <p>{meaning}</p>
+      <h2 className={styles.test}>{word}</h2>
+      <p className={styles.meaning}>{meaning}</p>
     </div>
   );
 };

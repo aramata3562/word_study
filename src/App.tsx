@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
+import styles from './App.module.css'
 import WordCard from './components/wordCard';
-import words from './data/word.json';
+
 
 type WordData = {
   word: string;
@@ -23,27 +23,33 @@ const App: React.FC = () => {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-    }, [])
+  }, [])
 
   const handleButtonClick = () => {
     setShowMeaning(!showMeaning);
   };
 
   const currentWordData = words[currentWordIndex] || { word: '', meaning: '' };
+  console.log(styles)
 
   return (
     <div>
-      <h1>単語勉強</h1>
-      <button onClick={handleButtonClick}>
-      {showMeaning ? 'Hide' : 'Show'}
-        </button>
-        <WordCard
-        word={currentWordData.word}
-        meaning={showMeaning ? currentWordData.meaning : ''}
-      />
-      <button onClick={() => setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length)}>
-        Next Word
-      </button>
+      <div className={styles.center}>
+        <div className={styles.background}>
+          <h1 className={styles.header}>単語勉強</h1>
+          <button onClick={handleButtonClick}>
+            {showMeaning ? 'Hide' : 'Show'}
+          </button>
+          <WordCard
+            word={currentWordData.word}
+            meaning={showMeaning ? currentWordData.meaning : ''}
+          />
+          <button onClick={() => setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length)}>
+            Next Word
+          </button>
+
+        </div>
+      </div>
     </div>
   );
 };
