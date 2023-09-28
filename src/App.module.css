@@ -13,3 +13,43 @@
 .background{
     background-color: beige;
     }
+
+/* Simple flat button */
+.flatButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .flat-button:hover {
+    background-color: #45a049;
+  }
+
+/* Outline button */
+.outlineButton {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid #4CAF50;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .outline-button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;  /* または 'space-around', 'space-evenly' 等々 */
+    align-items: center;
+  }
+  
+  .buttonContainer button {
+    margin-right: 10px;  /* 各ボタンの右側に10pxのマージンを追加 */
+  }
